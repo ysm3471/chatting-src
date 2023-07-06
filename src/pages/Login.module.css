@@ -1,0 +1,76 @@
+.login_container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.login_container > div {
+  height: 100%;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+.login_container h1 {
+  height: 90px;
+  width:100%;
+  text-indent: -9999px;
+  background: url('../../public/img/logo_w.png') no-repeat;
+  background-position:center;
+  background-size:auto 100%;
+  margin-bottom: 20px;
+}
+
+.login_container p {
+  font-size: 1.2rem;
+  color:#ffffff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.login_container form {
+  width: 240px;
+  margin: 0 auto 20px;
+}
+
+.form_id {
+  border-radius: 6px 6px 0 0;
+  border-bottom: none;
+  padding-left: 10px;
+}
+
+.form_pw {
+  border-radius: 0 0 6px 6px;
+  margin-bottom: 8px;
+  padding-left: 10px;
+  border-top: 1px solid var(--gray3);
+}
+
+.form_btn {
+  background: var(--main-color);
+  color:#008002;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.form_btn:hover {
+  background: var(--gray3);
+  color: #222
+}
+
+.login_container input {
+  width: 240px;
+  height: 40px;
+  border: 1px solid #00000025;
+  outline: none;
+}
+
+.login_container input::placeholder {
+  font-size: 0.8em;
+  color: var(--gray2)
+}
