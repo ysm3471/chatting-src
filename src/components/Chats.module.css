@@ -1,0 +1,47 @@
+.bubble_wrap {
+  display: flex;
+  flex-direction: column;
+}
+.bubble_wrap h4 {
+  width: auto;
+  font-size:16px;
+}
+.bubble_wrap h4 span {
+  font-weight:400;
+  font-size:12px;
+  margin-left:3px;
+  color:#333333
+}
+
+.content {
+  display: flex;
+}
+.content p {
+width: 80%;
+width:auto;
+height:auto;
+border-radius:6px;
+position: relative;
+padding: 10px;
+box-shadow: 2px 2px 10px #00000023;
+background: white;
+}
+
+.content p::before {
+width:0px;
+height:0px;
+content: "";
+position: absolute;
+top: 10px;
+left: -10px;
+border-bottom: 10px solid transparent;
+border-right: 10px solid white;
+}
+
+.content span {
+display: flex;
+align-items: self-end;
+font-size: 0.7rem;
+padding-left: 6px;
+white-space: nowrap;
+}

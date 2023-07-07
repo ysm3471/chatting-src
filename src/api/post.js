@@ -4,12 +4,19 @@ export default async function post(chat) {
   const date = new Date();
   const time = date.getTime();
 
+  const ipData = await fetch('https://geolocation-db.com/json/');
+  const locationIp = await ipData.json();
+  
+  const ip = locationIp.split('.')
+
+  console.log(ip);
+
   fetch('https://test2-23ab7-default-rtdb.asia-southeast1.firebasedatabase.app/chattingList.json',{
     method:"POST",
     body:JSON.stringify({
       id:chat.id,
       content:chat.content,
-      time,
+      time
     })
   })
   .then((res) => {

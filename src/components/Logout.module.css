@@ -1,0 +1,9 @@
+.Logout {
+  display:flex;
+}
+.Logout p {
+  margin-right:10px;
+}
+.Logout p:last-child {
+  cursor: pointer;
+}

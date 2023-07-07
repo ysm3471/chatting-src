@@ -1,42 +1,49 @@
-.container {}
-
-.bubble_wrap {
-  display: flex;
-  flex-direction: column;
+.container {
+  height:calc(100vh - 115px);
+  overflow: auto;
 }
-.bubble_wrap h4 {
-  width: auto;
+.recentBtn {
+  position:fixed;
+  right:70px;
+  bottom:130px;
+  width:40px;
+  height:40px;
+  cursor: pointer;
 }
-
-.content {
-  display: flex;
+.end {
+  width:100%;
+  height:20px;
 }
-.content p {
-width: 80%;
-width:auto;
-height:auto;
-border-radius:6px;
-position: relative;
-padding: 10px;
-box-shadow: 2px 2px 10px #00000023;
-background: white;
-}
-
-.content p::before {
-width:0px;
-height:0px;
-content: "";
-position: absolute;
-top: 10px;
-left: -10px;
-border-bottom: 10px solid transparent;
-border-right: 10px solid white;
+.prevChat {
+  width:140px;
+  line-height:40px;
+  background:#b3afaf;
+  position:fixed;
+  text-align:center;
+  border-radius:10px;
+  left:50%;
+  top:20px;
+  transform:translateX(-50%);
+  cursor: pointer;
 }
 
-.content span {
-display: flex;
-align-items: self-end;
-font-size: 0.7rem;
-padding-left: 6px;
-white-space: nowrap;
+/* 스크롤바 관련 */
+.container::-webkit-scrollbar {
+  width:5px;
+  height:20px;
+}
+.container::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 42%, 0.49);
+  border-radius: 100px;
+}
+/* 스크롤바의 상단,하단에 빈 공간을 주는 방법 */
+.container::-webkit-scrollbar-button:vertical:start:decrement,
+.container::-webkit-scrollbar-button:vertical:start:increment {
+    display: block;
+    height: 10px;
+}
+
+.container::-webkit-scrollbar-button:vertical:end:decrement {
+    display: block;
+    width: 25px;
 }
