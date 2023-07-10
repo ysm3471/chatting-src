@@ -3,7 +3,8 @@ import classes from './Chats.module.css'
 
 export default function Chats({ data,username }) {
   const {id,content,time,ip} = data;
-  
+
+
   const today = new Date();   
   const now = today.getTime();    // 현재 시간을 밀리세컨드 단위로 바꿈
   const timestamp = (now-time)/1000;    // 게시물을 현재 시간 기준으로 몇 초 지났는지 저장하는 변수
@@ -34,7 +35,7 @@ export default function Chats({ data,username }) {
         <div className={classes.pic}></div>
       </div>
       <div className={classes.bubble_wrap}>
-        {username === id ? <h4>{id}<span>({ip})</span></h4> : <h4><b>{id}</b><span>({ip})</span></h4> }
+        {username === id ? <h4><b>{id}</b><span>({ip})</span></h4> : <h4>{id}<span>({ip})</span></h4> }
         <div className={classes.content}>
           <p>{content}</p>
           <span>{when}</span>

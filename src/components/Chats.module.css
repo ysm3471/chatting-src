@@ -5,6 +5,7 @@
 .bubble_wrap h4 {
   width: auto;
   font-size:16px;
+  font-weight:500;
 }
 .bubble_wrap h4 span {
   font-weight:400;

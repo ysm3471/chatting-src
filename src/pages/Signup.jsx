@@ -16,7 +16,8 @@ export default function Signup() {
         id:formRef.current.id.value,
         password:formRef.current.password.value      
       }
-      assign(userInfo)      
+      assign(userInfo)    
+      alert('회원가입이 완료되었습니다')  
       navigate('/')
     }
   }

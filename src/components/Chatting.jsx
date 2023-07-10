@@ -4,11 +4,11 @@ import Chats from './Chats';
 import { useInView } from 'react-intersection-observer';
 import { AnimatePresence, motion } from 'framer-motion';
 
-export default function Chatting({ username, data, setPage }) {
+export default function Chatting({ username, data, setPage,page,leng }) {
   const [chatList, setChatList] = useState([]);
   const endRef = useRef();
   
-  const { ref, inView } = useInView();   // overflow 때문에 스크롤 이벤트가 자꾸 먹힘.. 외부 라이브러리를 사용해서 지정된 돔이 보일때를 체크함
+  const { ref, inView } = useInView();   // 외부 라이브러리를 사용해서 지정된 돔이 보일때를 체크함
 
   const setRefs = useCallback(    // 지정된 ref에 다른 ref를 추가하는 방법(공식문서 참조)
     (node) => {
@@ -17,6 +17,7 @@ export default function Chatting({ username, data, setPage }) {
     },
     [ref],
   );
+
 
   useEffect(() => {
     if (data) {
@@ -47,7 +48,7 @@ export default function Chatting({ username, data, setPage }) {
         {inView ? null
           :
           <>
-            <motion.div
+            {(page <= leng) && <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: .6 }}
               whileHover={{ opacity: 1 }}
@@ -55,7 +56,7 @@ export default function Chatting({ username, data, setPage }) {
               transition={{ duration: .2 }}
               className={classes.prevChat}
               onClick={showPrevChat}
-              >이전 채팅 보기</motion.div>
+              >이전 채팅 보기</motion.div>}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: .6 }}

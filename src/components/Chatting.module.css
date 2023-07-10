@@ -1,6 +1,6 @@
 .container {
-  height:calc(100vh - 115px);
-  overflow: auto;
+  height:100%;
+  padding-bottom:100px
 }
 .recentBtn {
   position:fixed;
@@ -25,25 +25,4 @@
   top:20px;
   transform:translateX(-50%);
   cursor: pointer;
-}
-
-/* 스크롤바 관련 */
-.container::-webkit-scrollbar {
-  width:5px;
-  height:20px;
-}
-.container::-webkit-scrollbar-thumb {
-  background-color: hsla(0, 0%, 42%, 0.49);
-  border-radius: 100px;
-}
-/* 스크롤바의 상단,하단에 빈 공간을 주는 방법 */
-.container::-webkit-scrollbar-button:vertical:start:decrement,
-.container::-webkit-scrollbar-button:vertical:start:increment {
-    display: block;
-    height: 10px;
-}
-
-.container::-webkit-scrollbar-button:vertical:end:decrement {
-    display: block;
-    width: 25px;
 }

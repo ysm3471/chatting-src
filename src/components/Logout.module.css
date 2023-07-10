@@ -1,9 +1,15 @@
 .Logout {
   display:flex;
+  width:90px;
 }
 .Logout p {
   margin-right:10px;
+  flex:1;
+  white-space:nowrap;
 }
 .Logout p:last-child {
   cursor: pointer;
+}
+.Logout p:last-child:hover {
+  font-weight:bold;
 }
