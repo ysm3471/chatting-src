@@ -1,69 +1,69 @@
-.chat{
-  width:100%;
-  height:100%;
-  background:rgb(124, 180, 253);
-  padding:0 15px;
+.chat {
+  width: 100%;
+  height: 100%;
+  background: rgb(124, 180, 253);
+  padding: 0 15px;
 }
+
 .chat form {
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
+
 .chat_form {
-  background:#fff;
-  width:100%;
-  height:100px;
-  padding:10px;
-  position:relative;
+  background: #fff;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  position: relative;
 }
+
 .chat_form textarea {
-  height:75px;
-  width:100%;
-  resize:none;
-  margin-bottom:8px;
-  border:none;
-  outline:none;
+  height: 75px;
+  width: 100%;
+  resize: none;
+  margin-bottom: 8px;
+  border: none;
+  outline: none;
 }
-.util{
-  display:flex;
-  justify-content:space-between;
-/*   .chat_form_util_plugin{
-    i {
-      margin-right:10px;
-      color:$gray2;
-      line-height:35px;
-      &:hover{color:black}
-    }    */   
-  }
-  .submit {
-    position:absolute;
-    bottom:20px;
-    right:20px;
-    height:60%;
-    width:70px;
-  }
-  .submit input{
-    height:100%;
-    width:100%;
-    border-radius:6px;
-    border:none;
-    color:var(--gray1);
-    cursor: pointer;
-    font-size:15px;
+
+.util {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 60%;
+  width: 70px;
+}
+
+.submit input {
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  color: var(--gray1);
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .logout {
-  position:fixed;
-  top:10px;
-  right:20px;
+  position: fixed;
+  top: 10px;
+  right: 20px;
 }
+
 .sending {
-  position:absolute;
-  bottom:0;
-  padding:20px;
-  font-weight:500;
-  width:100%;
-  height:100%;
-  background-color:#fff;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }

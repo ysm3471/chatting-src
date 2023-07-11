@@ -10,13 +10,13 @@ export default function Signup() {
   function submit(e) {
     e.preventDefault();
 
-    if(formRef.current.password.value.length < 4) alert('비밀번호는 4자리 이상 입력해주세요')
+    if(formRef.current.password.value.length < 4) alert('비밀번호는 4자리 이상 입력해주세요') 
     else {
       const userInfo = {
         id:formRef.current.id.value,
         password:formRef.current.password.value      
       }
-      assign(userInfo)    
+      assign(userInfo)    // 입력한 정보를 db로 전송하는 함수
       alert('회원가입이 완료되었습니다')  
       navigate('/')
     }

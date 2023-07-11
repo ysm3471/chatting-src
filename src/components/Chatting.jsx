@@ -5,12 +5,11 @@ import { useInView } from 'react-intersection-observer';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Chatting({ username, data, setPage,page,leng }) {
-  const [chatList, setChatList] = useState([]);
-  const endRef = useRef();
-  
-  const { ref, inView } = useInView();   // 외부 라이브러리를 사용해서 지정된 돔이 보일때를 체크함
+  const [chatList, setChatList] = useState([]);   // 렌더링시킬 chat을 관리하는 state
+  const endRef = useRef();    // 마지막 DOM을 지정하기 위한 ref
 
-  const setRefs = useCallback(    // 지정된 ref에 다른 ref를 추가하는 방법(공식문서 참조)
+  const { ref, inView } = useInView();   // 외부 라이브러리를 사용해서 지정된 돔이 보일때를 체크함
+  const setRefs = useCallback(    // useInView 사용 시 ref 변수에 다른 ref를 추가하는 방법(공식문서 참조)
     (node) => {
       endRef.current = node;
       ref(node);
@@ -18,7 +17,7 @@ export default function Chatting({ username, data, setPage,page,leng }) {
     [ref],
   );
 
-
+  /* 대화정보가 추가될 때마다 chatList에 저장함 */
   useEffect(() => {
     if (data) {
       const keys = Object.keys(data)
@@ -27,17 +26,17 @@ export default function Chatting({ username, data, setPage,page,leng }) {
     }
   }, [data])
   
-
-  function goRecent() {
+  /* 최근 대화로 이동하는 함수 */
+  function goRecent() { 
     endRef.current.scrollIntoView({ behavior: 'smooth' });
   }
+  /* 이전 대화를 보여주는 함수 */
   function showPrevChat() {
     setPage(num => num += 10)
   }
-
-  const chats = chatList.map((aa, index) => {
+  const chats = chatList.map((aa) => {
     return (
-      <Chats data={aa} key={index} username={username} />
+      <Chats data={aa} key={aa.time} username={username} />
     )
   })
 
@@ -48,6 +47,7 @@ export default function Chatting({ username, data, setPage,page,leng }) {
         {inView ? null
           :
           <>
+          {/* db와 불러온 page의 길이를 체크해서 이전 대화기록이 존재할 때만 버튼을 보여줌 */}
             {(page <= leng) && <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: .6 }}
