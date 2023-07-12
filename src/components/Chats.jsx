@@ -8,8 +8,10 @@ export default function Chats({ data }) {
   const [check,setCheck] = useState(false);   // 사용자가 chat을 등록한 사람인지 체크하는 state
 
   useEffect(() => {
-    const userIp = cookies.ip[2] + '.' + cookies.ip[3]
-    if(userIp === ip && cookies.id.id === id) setCheck(true);   // 사용자의 ip와 id를 대조함
+    if(cookies.ip) {
+      const userIp = cookies.ip[2] + '.' + cookies.ip[3]
+      if(userIp === ip && cookies.id.id === id) setCheck(true);   // 사용자의 ip와 id를 대조함
+    }
   },[data])
 
 

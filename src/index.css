@@ -29,3 +29,8 @@ img {
   height:100%;
   object-fit:cover;
 }
+.error {
+  font-size:3rem;
+  text-align:center;
+  color:#fff;
+}

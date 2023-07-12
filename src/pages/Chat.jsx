@@ -60,7 +60,7 @@ export default function Chat() {
         queryClient.invalidateQueries(['content']);   // 전송 후에 refetching시킴
         setTimeout(() => {    // 채팅이 로딩되는 시간차이에 맞춰서 동기적으로 실행시킴
           endRef.current.scrollIntoView({ behavior: 'smooth' });
-        }, 150)
+        }, 170)
       })
   })
 
